@@ -5,7 +5,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-const bool isProduction = false;
+const bool isProduction = true;
 const bool testingMode = true;
 
 // App definitions
@@ -295,8 +295,8 @@ class _PhoneHomeScreenState extends State<PhoneHomeScreen> with TickerProviderSt
 
     // Initialize dimensions based on testing mode
     if (testingMode) {
-      screenWidth = 720;
-      screenHeight = 1280;
+      screenWidth = 960;
+      screenHeight = 640;
       timeFontSize = 100;
       dateFontSize = 25;
       pillWidth = 200;
@@ -950,4 +950,5 @@ void main() {
       ),
     ),
   );
+
 }
