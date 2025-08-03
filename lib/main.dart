@@ -25,7 +25,7 @@ final List<Map<String, dynamic>> apps = [
 // Dock apps
 final List<Map<String, dynamic>> dockApps = [
   {"name": "Phone", "icon": "phone.png", "exec": isProduction ? ["chromium", "--kiosk","--touch-events=enabled","https://web.telegram.org"] : ["notepad.exe"]},
-  {"name": "Messages", "icon": "messages.png", "exec": isProduction ? ["firefox-esr", "https://web.whatsapp.com"] : ["notepad.exe"]},
+  {"name": "Messages", "icon": "messages.png", "exec": isProduction ? ["chromium", "--kiosk","--touch-events=enabled", "https://web.whatsapp.com"] : ["notepad.exe"]},
   {"name": "Camera", "icon": "camera.png", "exec": isProduction ? ["pkill", "Xorg"] : ["notepad.exe"]},
   {"name": "Browser", "icon": "browser.png", "exec": isProduction ? ["chromium", "--kiosk", "--touch-events=enabled", "https://google.com"] : ["notepad.exe"]},
 ];
@@ -952,3 +952,4 @@ void main() {
   );
 
 }
+
