@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Install Flutter SDK
           command: |
-            FLUTTER_VERSION=3.0.3
+            FLUTTER_VERSION=3.13.9
             CHANNEL=stable
             BASEURL="https://storage.googleapis.com/flutter_infra_release/releases/$CHANNEL/linux/flutter_linux_$FLUTTER_VERSION-$CHANNEL.tar.xz"
             curl -o flutter.tar.xz $BASEURL
@@ -71,6 +71,14 @@ jobs:
             source $BASH_ENV
             flutter create .
             flutter build linux
+      - run:
+          name: Zip Linux ARM64 build output
+          command: |
+            cd build/linux/arm64/release/
+            zip -r flutter_linux_arm64.zip bundle
+      - store_artifacts:
+          path: build/linux/arm64/release/flutter_linux_arm64.zip
+          destination: flutter_linux_arm64.zip
 
 workflows:
   build:
